@@ -23,6 +23,10 @@ app.get('/test', () => {try{
   banana()
 } catch(error){rollbar.error(error)}})
 
+app.get('/hello', () => {try{
+  sale()
+} catch(error){rollbar.critical('something big is not working')}})
+
 // include and initialize the rollbar library with your access token
 var Rollbar = require('rollbar')
 var rollbar = new Rollbar({
