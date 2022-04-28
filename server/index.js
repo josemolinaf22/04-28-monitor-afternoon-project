@@ -13,6 +13,12 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname,'../styles.css'))
 })
 
+app.get('/main', (req, res)=>{
+  res.sendFile(path.join(__dirname, '../main.js'))
+  rollbar.error("Main doesn't exist")
+})
+
+
 app.get('/test', () => {try{
   banana()
 } catch(error){rollbar.error(error)}})
