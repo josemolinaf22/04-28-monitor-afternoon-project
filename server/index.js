@@ -13,6 +13,9 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname,'../styles.css'))
 })
 
+app.get('/test', () => {try{
+  banana()
+} catch(error){rollbar.error(error)}})
 
 // include and initialize the rollbar library with your access token
 var Rollbar = require('rollbar')
